@@ -1,0 +1,347 @@
+body {
+  margin: 0;
+  font-family: 'Arial';
+  color: #77858d;
+  background-color: #f5f1eb;
+  width: 100%;
+}
+
+.container {
+  width: 70%;
+  max-width: 1200px;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #77858d;
+  border-radius: 30px;
+  width: 100%;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .brand {
+  height: 70px;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* position: absolute; */
+  gap: 4rem;
+}
+
+.nav a {
+  color: #f5f1eb;
+  text-decoration: none;
+  margin: 0 2rem;
+  font-size: 25px;
+  font-weight: 25000;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  height: 400px;
+  justify-content: space-between;
+  padding: 4rem 0rem;
+  background-color: #f5f1eb;
+  position: relative; /* Required for absolute child positioning */
+  overflow: visible;  /* Make sure overflow isn't hidden */
+}
+
+.banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 400px;
+  position: relative;
+}
+
+.shark {
+  max-width: 50%;
+  height: auto;
+  position: absolute;
+  top: -110px;  /* Move it upwards over the header */
+  right: -5rem;
+  z-index: 2;  /* Ensures it’s above the header */
+}
+
+.banner-text {
+  font-size: 2rem;
+  font-weight: bold;
+  max-width: 60%;
+}
+
+.tiles {
+  display: grid;
+  grid-template-areas:
+    "photo about"
+    "photo course"
+    "photo youtube";
+  grid-gap: 10px;
+  padding: 10px;
+  box-sizing: border-box; /* prevents padding from expanding total width */
+  width: 100%;
+}
+
+.tile {
+  background-color: #77858d;
+  color: #f5f1eb;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.tiles-section {
+  background-color: #f5f1eb;
+  padding: 2rem 0;
+}
+
+.photo {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
+  grid-area: photo;
+  height: 300px;
+}
+
+.about {
+  grid-area: about;
+  grid-column: 2 / span 3;
+  grid-row: 1 / span 2;
+  height: 300px;
+}
+
+.course {
+  grid-area: course;
+  grid-column: 1 / span 3;
+  grid-row: 3 / span 1;
+  height: 200px;
+}
+
+.youtube {
+  grid-area: youtube;
+  height: 200px;
+  grid-column: 4 / span 1;
+  grid-row: 3 / span 1;
+}
+
+footer {
+  background-color: #77858d;
+  color: #f5f1eb;
+  padding: 2rem 0rem;
+  border-radius: 30px;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: center;
+  gap: 15rem;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-column a {
+  color: #f5f1eb;
+  text-decoration: none;
+  margin: 0 2rem;
+  font-size: 15px;
+  font-weight: 1500;
+}
+
+
+.inforgrafika {
+  max-width: 100%;  /* never exceed container width */
+  height: auto;     /* keep aspect ratio */
+  display: block;   /* remove extra bottom gap from inline images */
+  margin: 0 auto;   /* center horizontally */
+}
+
+.zapisy {
+  background-color: #f5f1eb;
+  padding: 2rem 2rem;
+}
+
+.availability-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  gap: 0;
+}
+
+.availability-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.availability-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #77858d;
+}
+
+.availability-bar {
+  max-height: 30px;
+  width: auto;
+}
+
+.availability-button {
+  background-color: #77858d;
+  color: #f5f1eb;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.availability-button:hover {
+  background-color: #5f6a71;
+}
+
+.faq-section {
+  background-color: #f5f1eb; /* match site background */
+  padding: 3rem 0;
+}
+
+.faq-title {
+  text-align: center;
+  color: #77858d;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+
+.faq-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.faq-item {
+  background-color: #ffffff;
+  border: 2px solid #77858d;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.faq-item h3 {
+  margin-top: 0;
+  color: #77858d;
+  font-size: 1.1rem;
+}
+
+.faq-item p {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .header{
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .nav{
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .banner-text {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .banner img {
+    max-width: 80%;
+  }
+
+  .tiles {
+    grid-template-areas:
+      "photo"
+      "about"
+      "course"
+      "youtube";
+  }
+
+  .photo, .about, .course, .youtube {
+    grid-column: auto;
+    grid-row: auto;
+    height: auto; /* prevent forced tall boxes */
+    width: 100%;
+  }
+
+  .availability-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .availability-action {
+    margin-top: 1rem;
+  }
+
+  .availability-bar {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .faq-container {
+    grid-template-columns: 1fr; /* stack vertically */
+    max-width: 100%;
+  }
+}
+
+
+
+@media (max-width: 992px) {
+  .shark {
+    position: static;
+    max-width: 80%;
+    transform: none;
+    margin-top: 1rem;
+  }
+
+  .banner {
+    height: auto;
+    flex-direction: column;
+  }
+}
