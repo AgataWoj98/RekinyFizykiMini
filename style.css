@@ -41,7 +41,7 @@ nav {
 }
 
 .nav a {
-  color: #f5f1eb;
+  color: rgb(245, 241, 235);
   text-decoration: none;
   margin: 0 2rem;
   font-size: 25px;
@@ -51,35 +51,92 @@ nav {
 .banner {
   display: flex;
   align-items: center;
-  height: 400px;
+  height: 580px;
   justify-content: space-between;
   padding: 4rem 0rem;
+  padding-bottom: 0;
   background-color: #f5f1eb;
   position: relative; /* Required for absolute child positioning */
   overflow: visible;  /* Make sure overflow isn't hidden */
+  border-radius: 30px;
+
+  background-image: url('background_3.png');
+  background-size: cover;       /* Makes the image cover the whole section */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(245, 241, 235, 0.5); /* 50% black overlay */
+  z-index: 0; /* Behind content */
 }
 
 .banner-inner {
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: space-between;
-  min-height: 400px;
+  min-height: 450px;
   position: relative;
+  z-index: 1;
 }
 
 .shark {
   max-width: 50%;
   height: auto;
   position: absolute;
-  top: -110px;  /* Move it upwards over the header */
+  top: -210px;  /* Move it upwards over the header */
   right: -5rem;
   z-index: 2;  /* Ensures it’s above the header */
 }
 
 .banner-text {
-  font-size: 2rem;
-  font-weight: bold;
-  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* left align text */
+  max-width: 55%; /* keep space for shark */
+  z-index: 1;
+}
+
+.banner-text0 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #28254cff;
+  margin-bottom: 0.5rem;
+}
+
+.banner-text1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #28254cff;
+  margin-bottom: 1rem;
+}
+
+.banner-text2 {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #f5f1eb;
+  font-weight: 500;
+  max-width: 100%;
+  padding-left: 1rem;
+  background-color: #77858d;
+  border-radius: 10px;
+}
+
+.wave-divider {
+  position: absolute;
+  bottom: -1px; /* so it covers the border between sections */
+  left: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .tiles {
@@ -89,7 +146,7 @@ nav {
     "photo course"
     "photo youtube";
   grid-gap: 10px;
-  padding: 10px;
+  padding: 0px;
   box-sizing: border-box; /* prevents padding from expanding total width */
   width: 100%;
 }
@@ -97,18 +154,50 @@ nav {
 .tile {
   background-color: #77858d;
   color: #f5f1eb;
-  padding: 1rem;
+  padding: 1.2rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  font-weight: bold;
   border-radius: 15px;
+
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; /* Align text to left */
+  font-size: 1rem;
+  font-weight: normal;
+  border-radius: 15px;
+  line-height: 1.4;
+}
+
+.tile b {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.tile h4 {
+  margin: 0; /* Remove default margins */
+  font-weight: normal;
+}
+
+.tile ul {
+  margin: 0.5rem 0 0 1rem; /* Slight indentation */
+  padding-left: 1rem;
+}
+
+.tile li {
+  margin-bottom: 0.3rem;
+}
+
+.tile a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+  display: flex;
 }
 
 .tiles-section {
   background-color: #f5f1eb;
-  padding: 2rem 0;
+  padding: 0rem 0;
+  padding-top: 0rem;
+  padding-bottom: 2rem;
 }
 
 .photo {
@@ -120,14 +209,14 @@ nav {
 
 .about {
   grid-area: about;
-  grid-column: 2 / span 3;
+  grid-column: 2 / span 5;
   grid-row: 1 / span 2;
   height: 300px;
 }
 
 .course {
   grid-area: course;
-  grid-column: 1 / span 3;
+  grid-column: 1 / span 5;
   grid-row: 3 / span 1;
   height: 200px;
 }
@@ -135,7 +224,7 @@ nav {
 .youtube {
   grid-area: youtube;
   height: 200px;
-  grid-column: 4 / span 1;
+  grid-column: 6 / span 1;
   grid-row: 3 / span 1;
 }
 
@@ -286,9 +375,25 @@ footer {
     gap: 2rem;
   }
 
+  .banner-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .banner-text {
+    align-items: center;
     max-width: 100%;
-    margin-bottom: 1rem;
+  }
+
+  .banner-text0,
+  .banner-text1,
+  .banner-text2 {
+    color: #fff;
+  }
+
+  .shark {
+    max-width: 70%;
+    top: 0;
   }
 
   .banner img {
