@@ -262,10 +262,25 @@ footer {
   display: block;   /* remove extra bottom gap from inline images */
   margin: 0 auto;   /* center horizontally */
 }
-
+/*
 .zapisy {
   background-color: #f5f1eb;
   padding: 2rem 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}*/
+
+.zapisy {
+  background-color: #f5f1eb;
+  padding: 1rem 1rem;
+  margin-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical centering */
+  align-items: center;       /* horizontal centering */
+  text-align: center;
+  gap: 1rem;                 /* space between items */
 }
 
 .availability-container {
@@ -279,11 +294,12 @@ footer {
 .availability-info {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .availability-text {
-  font-size: 1.2rem;
+  display: block;
+  font-size: 2.2rem;
   font-weight: bold;
   color: #77858d;
 }
